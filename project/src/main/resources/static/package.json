@@ -1,0 +1,29 @@
+{
+  "name": "canadian_coders-soen341_project_w26",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hirdayraj/Canadian_Coders-SOEN341_Project_W26.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hirdayraj/Canadian_Coders-SOEN341_Project_W26/issues"
+  },
+  "homepage": "https://github.com/Hirdayraj/Canadian_Coders-SOEN341_Project_W26#readme",
+  "description": "",
+  "devDependencies": {
+    "@eslint/css": "^1.1.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.2.0",
+    "globals": "^17.4.0"
+  }
+}

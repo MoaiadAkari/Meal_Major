@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login & Signup</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/css/login.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-section">
+        <!--Login Form-->
+        <div class="form-container active" id="loginForm">
+          <h1 class="form-title">Welcome Back</h1>
+          <p class="form-subtitle">
+            Sign into your account to continue your meal planning journey
+          </p>
+
+          <form id="loginFormSubmit">
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Email Address"
+                required
+              />
+              <i class="fas fa-envelope"></i>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                name="password"
+                class="form-control"
+                placeholder="Password"
+                required
+              />
+              <i class="fas fa-lock"></i>
+            </div>
+            <div class="Forgot Password">
+              <a href="#" onclick="showForgotPassword()">Forgot Password?</a>
+            </div>
+            <button class="btn-primary" type="submit">
+              <i class="fas fa-spinner loading"></i>
+              <span class="btn-text"> Sign In</span>
+            </button>
+          </form>
+
+          <div class="social-login">
+            <div class="social-title">Or continue with</div>
+            <div class="social-buttons">
+              <div class="social-btn google" onclick="socialLogin('google')">
+                <i class="fab fa-google"></i>
+              </div>
+
+              <div
+                class="social-btn facebook"
+                onclick="socialLogin('facebook')"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </div>
+
+              <div class="social-btn twitter" onclick="socialLogin('twitter')">
+                <i class="fab fa-twitter"></i>
+              </div>
+            </div>
+          </div>
+          <div class="form-switch">
+            Don't have an account?
+            <a href="#" onclick="showSignup()">Create one</a>
+          </div>
+        </div>
+
+        <!--Sign Form: needs to add the rest of the elements we need for MealMajor-->
+
+        <div class="form-container" id="signupForm">
+          <h1 class="form-title">Create Account</h1>
+          <p class="form-subtitle">
+            Join thousands of users and start your journey today
+          </p>
+
+          <form id="signupFormSubmit">
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="First Name"
+                required
+              />
+               <i class="fas fa-user"></i>
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Last Name"
+                required
+              />
+               <i class="fas fa-user"></i>
+            </div>
+
+<!--date of birth and sex forms-->
+
+            <div class="form-group">
+              <input
+                type="date"
+                class="form-control"
+                id="dob"
+                name="dob"
+                required
+              />
+              <i class="fas fa-calendar"></i>
+            </div>
+
+            <div class="form-group">
+              <select
+                class="form-control"
+                id="sex"
+                name="sex"
+                required
+              >
+                <option value="">Select Sex</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+              </select>
+              <i class="fas fa-venus-mars"></i>
+            </div>
+
+<!--end of date of birth and sex forms-->
+            
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                class="form-control"
+                placeholder="Email Address"
+                required
+              />
+              <i class="fas fa-envelope"></i>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                name="newPassword"
+                class="form-control"
+                placeholder="Password"
+                required
+              />
+              <i class="fas fa-lock"></i>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="password"
+                name="confirmPassword"
+                class="form-control"
+                placeholder="Confirm Password"
+                required
+              />
+              <i class="fas fa-lock"></i>
+            </div>
+
+            <div class="checkbox-group">
+              <input type="checkbox" id="terms" required />
+              <label for="terms"
+                >I agree to the
+                <a href="#" style="color: #3b82f6; font-weight: 600">
+                  Terms of Service</a
+                >
+                and
+                <a href="#" style="color: #3b82f6; font-weight: 600"
+                  >Privacy Policy</a
+                >
+              </label>
+              <i class="fas fa-envelope"></i>
+            </div>
+
+            <button class="btn-primary" type="submit">
+              <i class="fas fa-spinner loading"></i>
+              <span class="btn-text"> Create Account</span>
+            </button>
+          </form>
+
+          <div class="social-login">
+            <div class="social-title">Or sign up with</div>
+            <div class="social-buttons">
+              <div class="social-btn google" onclick="socialLogin('google')">
+                <i class="fab fa-google"></i>
+              </div>
+
+              <div
+                class="social-btn facebook"
+                onclick="socialLogin('facebook')"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </div>
+
+              <div class="social-btn twitter" onclick="socialLogin('twitter')">
+                <i class="fab fa-twitter"></i>
+              </div>
+            </div>
+          </div>
+          <div class="form-switch">
+            Already have an account?
+            <a href="#" onclick="showLogin()">Sign In</a>
+          </div>
+        </div>
+
+     <!--User Information-->
+<div class="form-container" id="UserForm">
+          <h1 class="form-title">User Information</h1>
+          <p class="form-subtitle">
+            Enter your personal preferences to personalize your experience
+          </p>
+           <form id="UserFormSubmit">
+
+          <!-- Food Allergies plss -->
+  <div class="form-group">
+    <h3>Food Allergies</h3>
+    <label><input type="checkbox" name="foodAllergies" /> A</label><br />
+    <label><input type="checkbox" name="foodAllergies" /> B</label><br />
+    <label><input type="checkbox" name="foodAllergies" /> C</label><br/>
+     <label><input type="checkbox" name="foodAllergies" /> D</label><br />
+    <label><input type="checkbox" name="foodAllergies" /> E</label><br />
+     <label><input type="checkbox" name="foodAllergies" /> F</label><br />
+    <label><input type="checkbox" name="foodAllergies" /> G</label><br />
+     <label><input type="checkbox" name="foodAllergies" /> H</label><br />
+    <label><input type="checkbox" name="foodAllergies" /> I</label>
+  </div>
+
+  <!-- Diet Preferences -->
+  <div class="form-group">
+    <h3>Diet Preferences</h3>
+    <label><input type="checkbox" name="dietPreferences" /> J</label><br />
+    <label><input type="checkbox" name="dietPreferences" /> K</label><br />
+    <label><input type="checkbox" name="dietPreferences" /> L</label><br />
+    <label><input type="checkbox" name="dietPreferences" /> O</label>
+  </div>
+
+  <!-- Recipe Suggestion Categories -->
+  <div class="form-group">
+    <h3>Recipe Suggestion Categories</h3>
+    <label><input type="checkbox" name="recipeCategories" /> P</label><br />
+    <label><input type="checkbox" name="recipeCategories" /> Q</label>
+  </div>
+
+  <!-- Buttons -->
+  <div class="form-group" style="display: flex; justify-content: space-between;">
+    <button type="button" id="previousBtn">
+        <span class="btn-text">Previous</span>
+        <i class="fas fa-spinner loading"></i>
+    </button>
+
+    <button type="submit" id="UserFormSubmitBtn">
+        <span class="btn-text">Submit</span>
+        <i class="fas fa-spinner loading"></i>
+    </button>
+</div>
+</form>
+</div>
+
+            
+
+<!--Forgot password-->
+<div class="form-container" id="forgotForm">
+          <h1 class="form-title">Reset Password</h1>
+          <p class="form-subtitle">
+            Enter your email address to reset your password
+          </p>
+
+          <form id="forgotFormSubmit">
+           
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email Address"
+                required
+              />
+              <i class="fas fa-envelope"></i>
+            </div>
+
+            <button class="btn-primary" type="submit">
+              <i class="fas fa-spinner loading"></i>
+              <span class="btn-text"> Reset Password</span>
+            </button>
+          </form>
+ 
+          <div class="form-switch">
+            Remember your password?
+            <a href="#" onclick="showLogin()">Sign In</a>
+          </div>
+        </div>
+<!--reset password-->
+<div class="form-container" id="resetForm">
+          <h1 class="form-title">Reset Password</h1>
+          <p class="form-subtitle">
+            Enter your  new password
+          </p>
+
+          <form id="resetFormSubmit">
+           
+            <div class="form-group">
+              <input
+                type="password"
+                name="newPassword"
+                class="form-control"
+                placeholder=" New password"
+                required
+              />
+              <i class="fas fa-lock"></i>
+            </div>
+
+             <div class="form-group">
+              <input
+                type="password"
+                name="confirmPassword"
+                class="form-control"
+                placeholder="Confirm new password"
+                required
+              />
+              <i class="fas fa-llock"></i>
+            </div>
+
+
+            <button class="btn-primary" type="submit">
+              <i class="fas fa-spinner loading"></i>
+              <span class="btn-text"> Reset Password</span>
+            </button>
+          </form>
+ 
+          <div class="form-switch">
+            Remember your password?
+            <a href="#" onclick="showLogin()">Sign In</a>
+          </div>
+        </div>
+      </div>
+<div class="image-section">
+    <div class="floating-shapes"></div>
+    <div class="image-content">
+        <h2>MealMajor</h2>
+        <p>Sign up to start your journey of meal planning with us today</p>
+    </div>
+
+</div>
+
+
+      </div>
+
+</div>
+
+
+    </div>
+    <script src="/js/login.js"></script>
+  </body>
+</html>

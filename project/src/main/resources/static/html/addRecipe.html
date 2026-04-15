@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/addRecipe.css">
+</head>
+<body>
+    <div id="header"></div>
+    <main>
+        <div class="back-button">
+            <a href="/html/recipes.html"><i class="fa-solid fa-arrow-left"></i> Back</a>
+        </div>
+        <h2>Create a New Recipe</h2>
+        <form id="add-recipe-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="recipe-name">Recipe Name:</label>
+                    <input type="text" id="recipe-name" name="recipe-name" required>
+                </div>
+                <div class="image-upload">
+                    <label for="imageInput" class="upload-box">
+                        <span>Click or Drag an Image Here</span>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                    </label>
+                </div>
+                <div class="preview-container">
+                    <img id="previewImage" src="" alt="Image Preview" />
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="recipe-cost">Cost:</label>
+                    <input type="number" id="recipe-cost" name="recipe-cost" required>
+                </div>
+                <div class="form-group">
+                    <label for="difficulty">Difficulty:</label>
+                    <select id="difficulty" name="difficulty" required>
+                        <option value="">Select Difficulty</option>
+                        <option value="Beginner">Beginner</option>
+                         <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="prep-time">Prep Time (minutes):</label>
+                    <input type="number" id="prep-time" name="prep-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="serving-size">Serving Size:</label>
+                    <input type="number" id="serving-size" name="serving-size" placeholder="# of people" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="cook-time">Cook Time (minutes):</label>
+                    <input type="number" id="cook-time" name="cook-time" required>
+                </div>
+                <div class="form-group">
+                    <div class="multi-select">
+                        <label for="dietary-restrictions">Dietary Restrictions:</label>
+                        <button type="button" class="dropdown-btn" data-target="dietary-restrictions"> Select Food Allergies
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div id="dietary-restrictions" class="options">
+                            <label><input type="checkbox" value="peanuts"> Peanuts</label>
+                            <label><input type="checkbox" value="tree-nuts"> Tree Nuts</label>
+                            <label><input type="checkbox" value="eggs"> Eggs</label>
+                            <label><input type="checkbox" value="soy"> Soy</label>
+                            <label><input type="checkbox" value="wheat"> Wheat</label>
+                            <label><input type="checkbox" value="fish"> Fish</label>
+                            <label><input type="checkbox" value="shellfish"> Shellfish</label>
+                            <label><input type="checkbox" value="sesame"> Sesame</label>
+                            <!-- Possibly add dynamic checkboxes that use other allergens for profile defined during creation-->
+                        </div>
+                        <button type="button" class="dropdown-btn" data-target="intolerances"> Select Intolerances
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div id="intolerances" class="options">
+                            <label><input type="checkbox" value="lactose"> Lactose</label>
+                            <label><input type="checkbox" value="low-sugar"> Low Sugar</label>
+                            <label><input type="checkbox" value="gluten-free"> Gluten-Free</label>
+                            <label><input type="checkbox" value="soy"> Soy</label>
+                            <label><input type="checkbox" value="low-sodium"> Low Sodium</label>
+                            <!-- Possibly add dynamic checkboxes that use other allergens for profile defined during creation-->
+                        </div>
+                        <button type="button" class="dropdown-btn" data-target="preferences"> Select Preferences
+                            <span class="arrow">▼</span>
+                        </button>
+                        <div id="preferences" class="options">
+                            <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
+                            <label><input type="checkbox" value="vegan"> Vegan</label>
+                            <label><input type="checkbox" value="kosher"> Kosher</label>
+                            <label><input type="checkbox" value="keto"> Keto</label>
+                            <label><input type="checkbox" value="halal"> Halal</label>
+                            <!-- Possibly add dynamic checkboxes that use other allergens for profile defined during creation-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3>Ingredients</h3>
+            <div id="ingredients-container"></div>
+                <button type="button" id="add-ingredient-btn">
+                    <i class="fa-solid fa-plus"></i> Add Ingredient
+                </button>
+            </div>
+            <h3>Preparation Steps</h3>
+            <div class="form-group">
+                <textarea id="prep-steps" name="prep-steps" required></textarea>
+            </div>
+            <button type="submit" id="submit-recipe-btn">Submit Recipe</button>
+        </form>
+    </main>
+    <div id="footer"></div>
+    <script type="module" src="/js/addRecipe.js"></script>
+</body>
+</html>

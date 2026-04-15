@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Settings</title>
+    <link rel="stylesheet" href="/css/accountSettings.css" />
+</head>
+<body>
+
+    <header>
+        <nav class="navbar section-content" id="homepageForm">
+            <a href="#" class="nav-logo">
+                <h2 class="logo-text">Account Settings</h2>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">👤</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="account-container">
+        <form id="profileForm">
+
+            <section class="profile-section">
+                <h2>Personal Information</h2>
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" disabled />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" disabled />
+                </div>
+            </section>
+
+            <section class="profile-section">
+                <h2>Dietary Preferences</h2>
+
+                <div class="diet-grid">
+
+                    <div class="diet-col checkbox-grid">
+                        <h3>Food Allergies</h3>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="peanuts" name="foodAllergies" value="peanuts" disabled />
+                            <label for="peanuts">Peanuts</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="treeNuts" name="foodAllergies" value="treeNuts" disabled />
+                            <label for="treeNuts">Tree Nuts</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="wheat" name="foodAllergies" value="wheat" disabled />
+                            <label for="wheat">Wheat</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="fish" name="foodAllergies" value="fish" disabled />
+                            <label for="fish">Fish</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="shellfish" name="foodAllergies" value="shellfish" disabled />
+                            <label for="shellfish">Shellfish</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="sesame" name="foodAllergies" value="sesame" disabled />
+                            <label for="sesame">Sesame</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="eggs" name="foodAllergies" value="eggs" disabled />
+                            <label for="eggs">Eggs</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="soy" name="foodAllergies" value="soy" disabled />
+                            <label for="soy">Soy</label>
+                        </div>
+
+                        <div class="checkbox-wrapper other-wrapper">
+                            <input type="checkbox" id="otherAllergy" name="foodAllergies" value="other" disabled />
+                            <label for="otherAllergy">Other</label>
+                            <input
+                                type="text"
+                                id="otherAllergyText"
+                                class="other-popup"
+                                placeholder="Specify other allergy"
+                                disabled
+                            />
+                        </div>
+                    </div>
+
+                    <div class="diet-col checkbox-grid">
+                        <h3>Intolerances</h3>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="lactose" name="intolerances" value="lactose" disabled />
+                            <label for="lactose">Lactose</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="glutenFree" name="intolerances" value="glutenFree" disabled />
+                            <label for="glutenFree">Gluten-Free</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="lowSodium" name="intolerances" value="lowSodium" disabled />
+                            <label for="lowSodium">Low Sodium</label>
+                        </div>
+
+                        <div class="checkbox-wrapper other-wrapper">
+                            <input type="checkbox" id="otherIntolerance" name="intolerances" value="other" disabled />
+                            <label for="otherIntolerance">Other</label>
+                            <input
+                                type="text"
+                                id="otherIntoleranceText"
+                                class="other-popup"
+                                placeholder="Specify other intolerance"
+                                disabled
+                            />
+                        </div>
+                    </div>
+
+                    <div class="diet-col checkbox-grid">
+                        <h3>Preferences</h3>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="vegetarian" name="preferences" value="vegetarian" disabled />
+                            <label for="vegetarian">Vegetarian</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="vegan" name="preferences" value="vegan" disabled />
+                            <label for="vegan">Vegan</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="halal" name="preferences" value="halal" disabled />
+                            <label for="halal">Halal</label>
+                        </div>
+
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="kosher" name="preferences" value="kosher" disabled />
+                            <label for="kosher">Kosher</label>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <div class="button-group">
+                <button type="button" id="editBtn">Edit</button>
+                <button type="submit" id="saveBtn" style="display: none;">Save</button>
+                <button type="button" id="cancelBtn" style="display: none;">Cancel</button>
+                <button type="button" id="returnBtn">Return</button>
+            </div>
+
+        </form>
+    </main>
+
+    <script src="/js/accountSettings.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MealMajor | User Profile</title>
+    <link rel="stylesheet" href="/css/userProfile.css">
+</head>
+<body>
+
+    <div class="container" id="userprofileForm">
+        <div class="form-section">
+            <header>
+                <h1 class="form-title">User Profile</h1>
+                <p class="form-subtitle">Share your dietary needs so we can suggest the best recipes.</p>
+            </header>
+
+            <form id="userProfileFormSubmit">
+                <h2>Dietary Information</h2>
+
+                <div class="diet-grid">
+                    <!-- Column 1: Allergies -->
+                    <div class="diet-col checkbox-grid">
+                        <h3>Food Allergies</h3>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="peanuts" name="foodAllergies" value="peanuts">
+                            <label for="peanuts">Peanuts</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="treeNuts" name="foodAllergies" value="treeNuts">
+                            <label for="treeNuts">Tree Nuts</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="wheat" name="foodAllergies" value="wheat">
+                            <label for="wheat">Wheat</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="fish" name="foodAllergies" value="fish">
+                            <label for="fish">Fish</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="shellfish" name="foodAllergies" value="shellfish">
+                            <label for="shellfish">Shellfish</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="sesame" name="foodAllergies" value="sesame">
+                            <label for="sesame">Sesame</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="eggs" name="foodAllergies" value="eggs">
+                            <label for="eggs">Eggs</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="soy" name="foodAllergies" value="soy">
+                            <label for="soy">Soy</label>
+                        </div>
+                        <div class="checkbox-wrapper other-wrapper">
+                            <input type="checkbox" id="otherAllergy" name="foodAllergies" value="other">
+                            <label for="otherAllergy">Other</label>
+                            <input type="text" id="otherAllergyText" class="form-control other-popup" placeholder="Specify other allergy" style="display:none;">
+                            
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Intolerances (Added checkbox-grid class) -->
+                    <div class="diet-col checkbox-grid">
+                        <h3>Intolerances</h3>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="lactose" name="intolerances" value="lactose">
+                            <label for="lactose">Lactose</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="glutenFree" name="intolerances" value="glutenFree">
+                            <label for="glutenFree">Gluten-Free</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="lowSodium" name="intolerances" value="lowSodium">
+                            <label for="lowSodium">Low Sodium</label>
+                        </div>
+                        <div class="checkbox-wrapper other-wrapper">
+                            <input type="checkbox" id="otherIntolerance" name="intolerances" value="other">
+                            <label for="otherIntolerance">Other</label>
+                            <input type="text" id="otherIntoleranceText" class="form-control other-popup" placeholder="Specify other intolerance" style="display:none;">
+                        </div>
+                    </div>
+
+                    <!-- Column 3: Preferences (Added checkbox-grid class) -->
+                    <div class="diet-col checkbox-grid">
+                        <h3>Preferences</h3>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="vegetarian" name="preferences" value="vegetarian">
+                            <label for="vegetarian">Vegetarian</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="vegan" name="preferences" value="vegan">
+                            <label for="vegan">Vegan</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="halal" name="preferences" value="halal">
+                            <label for="halal">Halal</label>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <input type="checkbox" id="kosher" name="preferences" value="kosher">
+                            <label for="kosher">Kosher</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-spinner loading"></i>
+                        <span class="btn-text">Register</span>
+                    </button>
+                    <div class="form-switch-custom" id="previousBtn">
+                         <a href="/html/homepage.html">Skip Dietary Information</a>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="image-section">
+            <div class="image-content">
+                <h2>MealMajor</h2>
+                <p>Personalized meal plans and recipe suggestions tailored to your needs.</p>
+                <div class="floating-shapes"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/login.js"></script>
+</body>
+</html>

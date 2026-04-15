@@ -1,0 +1,144 @@
+/* 1. RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, system-ui, sans-serif;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1e293b;
+    overflow-x: hidden;
+    font-size: 1.1rem; /* Increased base size */
+}
+
+/* 2. LAYOUT CONTAINERS */
+.container {
+    display: flex;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    width: 90%;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.form-section {
+    flex: 1; 
+    padding: 60px 50px;
+    display: flex; 
+    flex-direction: column;  
+    justify-content: center;
+    animation: slideInLeft 0.8s ease;
+}
+
+.image-section {
+    flex: 1;
+    background: #065f46;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    text-align: center;
+    position: relative;
+    padding: 40px;
+    animation: slideInRight 0.8s ease;
+}
+
+/* Grid Pattern Overlay */
+.image-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23334155" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.4;
+}
+
+/* 3. TEXT STYLING */
+.form-title { font-size: 2.5rem; font-weight: 700; color: #065f46; text-align: center; margin-bottom: 10px; }
+
+.form-subtitle {
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.image-content { z-index: 1; position: relative; }
+.image-content h2 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 700; }
+.image-content p { font-size: 1.1rem; line-height: 1.6; color: #cbd5e1; }
+
+/* 4. DIETARY GRID LOGIC */
+.diet-col { display: flex; flex-direction: column; gap: 12px; }
+.checkbox-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px 20px; }
+.checkbox-grid h3 { grid-column: span 2; font-size: 1.3rem; font-weight: 700; margin-bottom: 5px; }
+
+/* Extra spacing for 2nd and 3rd columns */
+.diet-grid .diet-col:not(:first-child) h3 { margin-top: 24px; }
+
+.checkbox-wrapper { display: flex; align-items: center; gap: 8px; color: #334155; }
+.checkbox-wrapper label { font-size: 1.05rem; font-weight: 500; cursor: pointer; }
+
+/* 5. "OTHER" INPUT LOGIC */
+.other-wrapper { grid-column: span 2; position: relative; }
+.other-popup {
+    display: none;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+.other-popup.show {
+    display: block; /* This forces it to appear */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* 6. INPUTS & BUTTONS */
+.form-control {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+.form-control:focus { border-color: #10b981; box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.1); }
+
+.btn-primary {
+    width: 100%;
+    background: #10b981;
+    color: white;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+.btn-primary:hover { background: #059669; transform: translateY(-2px); }
+
+.form-switch-custom { text-align: center; margin-top: 20px; }
+.form-switch-custom a { color: #64748b; text-decoration: none; font-size: 0.95rem; transition: color 0.3s; }
+.form-switch-custom a:hover { color: #10b981; text-decoration: underline; }
+
+/* 7. ANIMATIONS */
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
+
+/* 8. RESPONSIVE */
+@media (max-width: 768px) {
+    .container { flex-direction: column; width: 95%; }
+    .form-subtitle { white-space: normal; }
+    .checkbox-grid { grid-template-columns: 1fr; }
+    .checkbox-grid h3 { grid-column: span 1; }
+}

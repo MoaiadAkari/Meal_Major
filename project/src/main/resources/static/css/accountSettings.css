@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f1f5f9;
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+/* ================= HEADER ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #4CAF50;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+header .navbar {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-logo {
+    text-decoration: none;
+}
+
+.nav-logo .logo-text {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* ================= MAIN CONTAINER ================= */
+.account-container {
+    margin-top: 130px;
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px 60px;
+}
+
+/* ================= FORM CARD ================= */
+#profileForm {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1050px;
+    border-radius: 28px;
+    padding: 50px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* ================= SECTIONS ================= */
+.profile-section {
+    margin-bottom: 42px;
+}
+
+.profile-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #065f46;
+    margin-bottom: 24px;
+}
+
+/* ================= FORM GROUPS ================= */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #065f46;
+    margin-bottom: 8px;
+}
+
+/* ================= INPUTS ================= */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.other-popup {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.8px solid #cbd5e1;
+    border-radius: 12px;
+    font-size: 1rem;
+    color: #1e293b;
+    background-color: #ffffff;
+    transition: 0.25s ease;
+}
+
+.form-group input:focus,
+.other-popup:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.12);
+}
+
+input:disabled {
+    background-color: #f8fafc;
+    color: #475569;
+    cursor: not-allowed;
+}
+
+/* ================= PASSWORD AREA ================= */
+.password-wrapper {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.password-wrapper input {
+    flex: 1;
+}
+
+.password-wrapper button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 999px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.password-wrapper button:hover {
+    background-color: #3d9441;
+}
+
+/* ================= DIET GRID ================= */
+.diet-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    margin-top: 15px;
+}
+
+.diet-col {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 24px 20px;
+    min-height: 100%;
+}
+
+.diet-col h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 18px;
+}
+
+/* ================= CHECKBOXES ================= */
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.checkbox-wrapper label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0f172a;
+    margin: 0;
+}
+
+.checkbox-wrapper input[type="checkbox"] {
+    transform: scale(1.15);
+    accent-color: #10b981;
+    cursor: pointer;
+}
+
+.checkbox-wrapper input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+}
+
+/* ================= OTHER INPUT INLINE ================= */
+.other-wrapper {
+    align-items: center;
+    gap: 10px;
+}
+
+.other-wrapper .other-popup {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 14px;
+    font-size: 0.95rem;
+}
+
+/* ================= BUTTON GROUP ================= */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.button-group button {
+    min-width: 110px;
+    padding: 11px 26px;
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.98rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.button-group button:hover {
+    background-color: transparent;
+    color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+.button-group button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 950px) {
+    .diet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #profileForm {
+        padding: 38px 24px;
+    }
+
+    .profile-section h2 {
+        font-size: 1.7rem;
+    }
+
+    .diet-col h3 {
+        font-size: 1.25rem;
+    }
+}
+
+@media (max-width: 600px) {
+    header .navbar {
+        padding: 18px 20px;
+    }
+
+    .nav-logo .logo-text {
+        font-size: 1.35rem;
+    }
+
+    .account-container {
+        margin-top: 110px;
+        padding: 20px 12px 40px;
+    }
+
+    #profileForm {
+        padding: 28px 18px;
+        border-radius: 20px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .button-group button {
+        width: 100%;
+        max-width: 220px;
+    }
+}

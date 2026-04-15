@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/displayRecipes.css"> 
+</head>
+<body>
+<div id="header"> </div>
+    <main>
+        <h1 id="recipe-name">Recipe Name</h1>
+
+        <section class="recipe-container">
+      
+            <a id="close-btn"><i class="fa-solid fa-xmark"></i></a>
+
+         <div class="recipe-top"> 
+
+    <div class="recipe-info">
+         <span><strong>Prep Time:</strong><span id="prep-time"></span>min</span>
+         <span><strong>Cook Time:</strong><span id="cook-time"></span>min</span>
+         <span><strong>Cost:</strong><span id="recipe-cost"></span>$</span> <!-- moved Cost here -->
+         <span><strong>Serving Size:</strong><span id="serving-size"></span></span>
+         <span><strong>Difficulty:</strong><span id="difficulty"></span></span>
+    </div>
+     <div class="recipe-image-container">
+            <img id="recipe-image" src="" alt="Recipe Image"/>
+        </div>
+
+        <div class="recipe-tags">
+            <div><strong>Dietary Restrictions: </strong><span id="dietary-restrictions"></span></div>
+            <div><strong>Intolerances: </strong><span id="intolerances"></span></div>
+            <div><strong>Preferences: </strong><span id="preferences"></span></div>
+        </div>
+        
+            <h3>Ingredients</h3>
+            <div id="ingredients-list"></div>
+
+            <h3>Preparation Steps</h3>
+            <div id="prep-steps"></div>
+
+            <button id="edit-recipe-btn">Edit Recipe</button>
+            <button id="delete-recipe-btn">Delete Recipe</button>
+           
+    </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script type="module" src="/js/displayRecipes.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# === Maven / Java ===
+project/target/
+project/bin/
+*.class
+
+# === Eclipse ===
+project/.project
+project/.classpath
+project/.settings/
+
+# === IntelliJ / VSCode ===
+project/.idea/
+project/.vscode/
+.vscode/
+.clj-kondo/
+
+# === OS-specific ===
+.DS_Store
+Thumbs.db
+
+# === Logs ===
+*.log
+
+# === Temporary files ===
+*.tmp
+*.swp
+.idea/
+
+
+node_modules/
